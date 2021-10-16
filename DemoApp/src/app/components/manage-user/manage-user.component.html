@@ -1,0 +1,39 @@
+<br>
+<br>
+<br>
+    <div class="container">
+        <div class="row">
+            <button type="button" (click)="navigateToList()" class="btn btn-info">Add New User</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">User Name</th>
+                    <th scope="col">Display Name</th>
+                    <th scope="col">Ext. User Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Options</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let row of users; let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{row.name}}</td>
+                    <td>{{row.position}}</td>
+                    <td>{{row.office}}</td>
+                    <td>{{row.salary}}</td>
+                    <td>
+                        <button type="button" class="btn btn-success" (click)="updateUser(row)">Edit</button>
+                        &nbsp;
+                        <button type="button" class="btn btn-danger" (click)="deleteUser(row._id)">Delete</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
